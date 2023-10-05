@@ -20,11 +20,14 @@ public class CurrencyController {
         this.dao = dao;
     }
 
+//    end point to get all info from Currency table
     @RequestMapping("/all")
     public List<CurrencyDTO> getCurrency() {
         return this.dao.getCurrencyList();
     }
 
+
+//    end point to get one currency info (currency ID, currency Name and exchange rate) by currency id
     @RequestMapping("/rate")
     public CurrencyDTO getExchangeRate(@RequestParam String CurrencyID) {
         return this.dao.getExchangeRate(CurrencyID);
