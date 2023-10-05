@@ -20,6 +20,24 @@ public class DAO {
         List<CurrencyDTO> currency = jdbcTemplate.query(sql, new CurrencyRowMapper());
         return currency;
     }
+
+    public CurrencyDTO getExchangeRate(String CurrencyID) {
+        String sql = "SELECT * FROM Currency WHERE CurrencyID = ?";
+        CurrencyDTO rate = jdbcTemplate.queryForObject(sql, new Object[]{CurrencyID}, new CurrencyRowMapper());
+        return rate;
+    }
+
+    public List<BalanceDTO> getBalanceList() {
+        String sql = "SELECT * from Balance";
+        List<BalanceDTO> balance = jdbcTemplate.query(sql, new BalanceRowMapper());
+        return balance;
+    }
+
+    public BalanceDTO getBalance(String CurrencyID) {
+        String sql = "SELECT * FROM Balance WHERE CurrencyID = ?";
+        BalanceDTO balance = jdbcTemplate.queryForObject(sql, new Object[]{CurrencyID}, new BalanceRowMapper());
+        return balance;
+    }
 }
 
 

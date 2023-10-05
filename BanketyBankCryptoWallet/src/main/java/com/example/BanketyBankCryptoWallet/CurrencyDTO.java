@@ -2,9 +2,12 @@ package com.example.BanketyBankCryptoWallet;
 
 public class CurrencyDTO {
 
+
+
     private String currencyID;
     private String currencyName;
-    private double exchangeRate;
+    private double exchangeRate1GBP;
+
 
     public String getCurrencyID() {
         return currencyID;
@@ -22,11 +25,11 @@ public class CurrencyDTO {
         this.currencyName = currencyName;
     }
 
-    public double getExchangeRate() {
-        return exchangeRate;
+    public double getExchangeRate1GBP() {
+        return exchangeRate1GBP;
     }
 
-    public void setExchangeRate(double exchangeRate) {
-        this.exchangeRate = exchangeRate;
+    public void setExchangeRate1GBP(double exchangeRate1GBP) {
+        this.exchangeRate1GBP = exchangeRate1GBP;
     }
 }

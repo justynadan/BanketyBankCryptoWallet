@@ -4,6 +4,7 @@ package com.example.BanketyBankCryptoWallet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,6 +23,11 @@ public class CurrencyController {
     @RequestMapping("/all")
     public List<CurrencyDTO> getCurrency() {
         return this.dao.getCurrencyList();
+    }
+
+    @RequestMapping("/rate")
+    public CurrencyDTO getExchangeRate(@RequestParam String CurrencyID) {
+        return this.dao.getExchangeRate(CurrencyID);
     }
 }
 

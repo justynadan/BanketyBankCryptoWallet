@@ -11,7 +11,7 @@ public class CurrencyRowMapper implements RowMapper<CurrencyDTO> {
         CurrencyDTO currency = new CurrencyDTO();
         currency.setCurrencyID(rs.getString("CurrencyID"));
         currency.setCurrencyName(rs.getString("CurrencyName"));
-        currency.setExchangeRate(rs.getDouble("ExchangeRate1GBP"));
+        currency.setExchangeRate1GBP(rs.getDouble("ExchangeRate1GBP"));
         return currency;
     }
 
