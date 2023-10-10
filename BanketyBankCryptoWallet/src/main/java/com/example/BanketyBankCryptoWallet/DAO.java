@@ -38,6 +38,14 @@ public class DAO {
         BalanceDTO balance = jdbcTemplate.queryForObject(sql, new Object[]{CurrencyID}, new BalanceRowMapper());
         return balance;
     }
+
+    public CombinedDTO getCombinedData(String CurrencyID) {
+        String sql = "SELECT * FROM Currency inner join Balance on Currency.CurrencyID = Balance.CurrencyID WHERE Currency.CurrencyID = ? ";
+
+        CombinedDTO output = jdbcTemplate.queryForObject(sql, new CombinedRowMapper(), CurrencyID);
+
+        return output;
+    }
 }
 
 

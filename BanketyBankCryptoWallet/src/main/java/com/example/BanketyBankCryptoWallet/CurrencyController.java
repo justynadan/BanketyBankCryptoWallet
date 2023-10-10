@@ -2,10 +2,7 @@ package com.example.BanketyBankCryptoWallet;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,7 +29,15 @@ public class CurrencyController {
     public CurrencyDTO getExchangeRate(@RequestParam String CurrencyID) {
         return this.dao.getExchangeRate(CurrencyID);
     }
+
+    @RequestMapping("/combined")
+
+    public CombinedDTO getCombinedData(@RequestParam String CurrencyID) {
+        return this.dao.getCombinedData(CurrencyID);
+    }
+
 }
+
 
 
 

@@ -10,8 +10,5 @@ public class BanketyBankCryptoWalletApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BanketyBankCryptoWalletApplication.class, args);
 	}
-
 }
-
-
 
