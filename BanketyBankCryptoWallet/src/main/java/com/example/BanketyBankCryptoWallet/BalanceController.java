@@ -1,10 +1,7 @@
 package com.example.BanketyBankCryptoWallet;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +26,12 @@ public class BalanceController {
     @RequestMapping("/currencyBalance")
     public BalanceDTO getBalance(@RequestParam String CurrencyID) {
         return this.dao.getBalance(CurrencyID);
+    }
+
+
+// end point to UPDATE balances
+    @GetMapping("/update/{CurrencyID}/{CurrencyBalance}")
+    public void updateBalance(@PathVariable String CurrencyID, @PathVariable double CurrencyBalance) {
+    dao.updateBalance(CurrencyID, CurrencyBalance);
     }
 }

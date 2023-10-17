@@ -46,6 +46,12 @@ public class DAO {
 
         return output;
     }
+
+    public void updateBalance(String CurrencyID, double CurrencyBalance) {
+        String sql = "UPDATE Balance SET CurrencyBalance = ? " + "WHERE CurrencyID = ?";
+         jdbcTemplate.update(sql, CurrencyBalance, CurrencyID);
+
+    }
 }
 
 
